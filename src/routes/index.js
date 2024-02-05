@@ -10,6 +10,11 @@ router.get('/login', (req, res) => {
     res.render('login', {layout:'main', title:'KimioLink user authentication'});
 });
 
+router.post('/validate_user', (req, res) => {
+    console.log('I should be validating!');
+    res.render('homepage',{layout:'home', title:'KimioLink Your Home Page', patientId:req.body.txtUserEmail});
+});
+
 router.get('/register',(req, res)=> {
     res.render('register',{layout:'main', title:'KimioLink User Registration'});
 });

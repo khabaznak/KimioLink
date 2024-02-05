@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Share meds and save lives",
   "main": "app.js",
+  "type":"commonjs",
   "scripts": {
     "start": "node app.js",
     "dev": "concurrently \"nodemon app.js\" \"sass --watch src/assets/styles:public/css\"",
