@@ -7,7 +7,7 @@
         <label for="txtUserPassword">Password:</label>
         <input type="password" name="txtUserPassword" id="txtUserPassword">
         <br/>
-        <button type="submit" hx-post="/validate_user">login!</button>
+        <button type="submit" hx-post="/validate_user" hx-target="body" hx-swap="innerHTML">Login</button>
     </form>
     <a href="/">Back to Landing!</a>
 </div>
