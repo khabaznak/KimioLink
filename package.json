@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node app.js",
     "dev": "concurrently \"nodemon app.js\" \"sass --watch src/assets/styles:public/css\"",
-    "sass": "sass --watch src/assets/styles:public/css"
+    "sass": "sass --watch src/assets/styles:public/css",
+    "lint": "eslint ."
   },
   "author": "NS",
   "license": "ISC",
