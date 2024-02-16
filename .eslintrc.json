@@ -1,0 +1,30 @@
+{
+    "env": {
+      "browser": true, // Support for browser globals like window and document
+      "es2021": true, // Latest ECMAScript features
+      "node": true // Support for Node.js global variables and Node.js scoping
+    },
+    "extends": [
+      "eslint:recommended", // Use the recommended rules from ESLint
+      "plugin:node/recommended" // Recommended Node.js rules
+    ],
+    "parserOptions": {
+      "ecmaVersion": 12, // Allows for the parsing of modern ECMAScript features
+      "sourceType": "module" // Allows for the use of imports
+    },
+    "plugins": [
+      "node" // This plugin provides linting rules specific to Node.js
+    ],
+    "rules": {
+      // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
+      "indent": ["error", 2], // Enforce 2-space indentation
+      "linebreak-style": ["error", "unix"], // Enforce UNIX linebreaks
+      "quotes": ["error", "single"], // Enforce single quotes
+      "semi": ["error", "always"], // Require semicolons
+      "no-unused-vars": ["warn"], // Warn about variables that are declared but not used
+      "node/no-unsupported-features/es-syntax": ["error", {
+        "ignores": ["modules"] // Allow ES modules
+      }]
+    }
+  }
+      
