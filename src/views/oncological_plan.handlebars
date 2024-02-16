@@ -1,0 +1,19 @@
+<div>
+    <h1>Oncological Plan</h1>
+    <p>Define your plan by adding all stages you need. <br/>
+    Each stage you can also define your drug, doze, frequency and even resting period.</p>
+    <div class="controller_panel">
+        <a href="/show_add_stage_form" 
+        hx-swap="outerHTML" 
+        hx-target="#add-stage-form"> HELLO </a>
+<br/>
+        <button hx-get="/show_add_stage_form" hx-swap="outerHTML" hx-target="#add-stage-form">Add a new stage to the plan</button>
+        <button hx-get="/show_add_stage_form" hx-swap="outerHTML" hx-target="#add-stage-form" onclick="alert('Bleh')">Add a new stage to the plan</button>
+        <div class="zebutton" hx-get="/show_add_stafe_form" hx-swap="outerHTML" hx-target="#add-stage-form" hx-on="click">Click me!</div>
+    </div>
+    <div id="add-stage-form">
+    </div>
+    <section>
+        <h2>Plan:</h2>
+    </section>
+</div>

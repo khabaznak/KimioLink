@@ -1,0 +1,14 @@
+<div class="">
+    <div class="capture_form_row">
+        <label for="txtDrugName">Drug Name</label>
+        <input type="text" name="txtDrugName" id="txtDrugName">
+    </div>
+    <div class="capture_form_row">
+        <label for="txtDrugPurpose">Drug Purpose</label>
+        <input type="text" name="txtDrugPurpose" id="txtDrugPurpose">
+    </div>
+    <!-- more fields go here -->
+    <button hx-get="/show_add_stage_form" hx-swap="outerHTML" hx-target="#add-stage-form">Add a new stage to the plan</button>
+        <button hx-get="/show_add_stage_form" hx-swap="outerHTML" hx-target="#add-stage-form" onclick="alert('Bleh')">Add a new stage to the plan</button>
+        <div class="zebutton" hx-get="/show_add_stafe_form" hx-swap="outerHTML" hx-target="#add-stage-form" hx-on="click">Click me!</div>
+</div>

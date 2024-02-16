@@ -6,4 +6,16 @@ html, body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.capture_form_row {
+  display: flex;
+  flex-direction: column;
+}
+
+.zebutton {
+  margin: 10px;
+  border-radius: 8px;
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=home.css.map */

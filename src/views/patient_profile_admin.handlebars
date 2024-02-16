@@ -1,0 +1,84 @@
+<form class="patient_profile_capture_screen" id="frmPatientProfile" method="post">
+    <div>
+        <a href="/home">Home</a>
+    </div>
+    <div>
+        <h3>Informacion B&aacute;sica</h3>
+        <div class="capture_form_row">
+            <label for="txtName">Nombre Completo</label> <!-- this information is captured also at registration time -->
+            <input type="text" name="txtName" id="txtName">
+        </div>
+        <div class="capture_form_row">
+            <label for="txtBirthdate">Fecha de nacimiento</label> <!-- this information is captured also at registration time -->
+            <input type="date" name="txtBirthdate" id="txtBirthdate">
+        </div>        
+        <div class="capture_form_row">
+            <input type="radio" name="radSex" id="radMale">
+            <label for="radMale">Hombre</label>
+            <input type="radio" name="radSex" id="radFemale">
+            <label for="radFemale">Mujer</label>
+        </div>
+        <div class="capture_form_row">
+            <label for="txtAddress">Domicilio</label> 
+            <textarea name="txtAddress" id="txtAddress" cols="90" rows="4"></textarea>
+        </div>
+    </div>
+    <div>
+        <h3>Informaci&oacute;n de Padecimiento</h3>
+        <div class="capture_form_row">
+            <label for="txtCancerType">Tipo de C&aacute;ncer</label>
+            <input type="text" name="txtCancerType" id="txtCancerType">
+        </div>
+        <div class="capture_form_row">
+            <label for="txtCancerSubtype">Subtipo de C&aacute;ncer (Opcional)</label>
+            <input type="text" name="txtCancerSubtype" id="txtCancerSubtype">
+        </div>
+        <div class="capture_form_row">
+            <label for="txtCancerStage">Estadio del C&aacute;ncer</label>
+            <input type="text" name="txtCancerStage" id="txtCancerStage">
+        </div>
+        <div class="capture_form_row">
+            <label for="txtDiagnoseDate">Fecha del Diagn&oacute;stico</label>
+            <input type="date" name="txtDiagnoseDate" id="txtDiagnoseDate">
+        </div>
+        <div class="capture_form_row">
+            <label for="txtPriorTreatments">Tratamientos Anteriores</label> 
+            <textarea name="txtPriorTreatments" id="txtPriorTreatments" cols="90" rows="4"></textarea>
+        </div>
+    </div>
+    <div>
+        <h3>Tratamiento Actual</h3>
+        Nombre del Medicamento(s): Los medicamentos espec&iacute;ficos que el paciente est&aacute; buscando.
+        <div class="capture_form_row">
+            <label for="txtDrugName">Nombre del Medicamento</label>
+            <input type="text" name="txtDrugName" id="txtDrugName">
+        </div>
+        <div class="capture_form_row">
+            <label for="txtDose">Dosificaci&oacute;n</label>
+            <textarea name="txtDose" id="txtDose" cols="50" rows="5"></textarea>
+        </div>
+        <div class="capture_form_row">
+            <label for="dropIntakeFrequency">Frecuencia de administraci&oacute;n</label>
+            <select name="dropIntakeFrequency" id="dropIntakeFrequency">
+                <option value="daily">Diaria</option>
+                <option value="weekly">Semanal</option>
+                <option value="Monthly">Mensual</option>
+                <option value="other">Otro</option>
+            </select>
+        </div>
+        <div class="capture_form_row">
+            <label for="txtDuration">Duraci&oacute;n (en numero de frecuencias. ej: 3 semanas)</label>
+            <input type="number" name="txtDuration" id="txtDuration">
+        </div>
+        <div class="capture_form_row">
+            <label for="txtDoctorName">M&eacute;dico Tratante (Opcional)</label>
+            <input type="text" name="txtDoctorName" id="txtDoctorName">
+        </div>
+        <div class="capture_form_row">
+            <label for="txtDoctorEmail">Email del M&eacute;dico Tratante (Opcional)</label>
+            <input type="text" name="txtDoctorEmail" id="txtDoctorEmail">
+        </div>        
+    </div>
+    <button hx-post="/patient_profile">Guardar</button>
+</form>
+    <button hx-swap="outerHTML" hx-target="body" hx-get="/home">Cancelar</button>
