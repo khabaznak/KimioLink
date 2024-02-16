@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Share meds and save lives",
   "main": "app.js",
-  "type":"commonjs",
+  "type": "commonjs",
   "scripts": {
     "start": "node app.js",
     "dev": "concurrently \"nodemon app.js\" \"sass --watch src/assets/styles:public/css\"",
@@ -26,6 +26,7 @@
     "chai": "^5.0.0",
     "concurrently": "^8.2.2",
     "eslint": "^8.56.0",
+    "eslint-plugin-node": "^11.1.0",
     "mocha": "^10.2.0",
     "nodemon": "^3.0.3"
   }
