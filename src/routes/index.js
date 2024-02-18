@@ -52,5 +52,25 @@ router.get('/oncological_plan', (req, res) => {
 });
 
 
+router.post('/save-treatment-medication', (req, res) => {   
+  let medicationPlan = {
+    medicationName: req.body.medicationName,
+    activeSubstance: req.body.activeSubstance,
+    alternative: req.body.alternative,
+    dosage: req.body.dosage,
+    dosageUnit: req.body.dosageUnit,
+    guide: req.body.guide,
+    restPeriod: req.body.restPeriod,
+    duration: req.body.duration,
+    durationUnit: req.body.durationUnit,
+    doctorName: req.body.doctorName,
+    doctorEmail: req.body.doctorName
+  };
+
+  console.log('Saving treatment medication');
+  res.render('oncological_plan',{layout:'home', title:'KimioLink Oncological Plan', patientId:'12345', treatmentPlan: medicationPlan});
+});
+
+
 // Export the router
 module.exports = router;
