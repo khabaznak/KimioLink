@@ -1,4 +1,7 @@
 <div>
+    <h1>Oncological Plan</h1>
+    <p>Define your plan by adding all stages you need. <br/>
+    Each stage you can also define your drug, doze, frequency and even resting period.</p>
     <side>
         <a href="/home">Back to Home</a>
         <a href="/search">Search meds</a>
@@ -6,17 +9,27 @@
         <a href="/sponsors">Your sponsors</a>
         <a href="/Logout">Logout</a>
     </side>
-    <h1>Oncological Plan</h1>
-    <p>Define your plan by adding all stages you need. <br/>
-    Each stage you can also define your drug, doze, frequency and even resting period.</p>
     <div class="controller_panel">
 <br/>
         <button hx-get="/show_add_stage_form" hx-swap="outerHTML">Add a new stage to the plan</button>
     </div>
     <section>
-        <h2>Plan:</h2>
-        <div class="chemo_plan_step">
-            {{ treatmentPlan.medicationName}}
-        </div>
+        <table>
+            <caption>Your Treatment Plan</caption>
+            <thead>
+                <th>Step</th>
+                <th>Medication</th>
+                <th>Dosage</th>
+                <th>Guide</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>{{treatmentPlan.medicationName}}</td>
+                    <td>{{treatmentPlan.dosage}}{{treatmentPlan.dosageUnit}}</td>
+                    <td>{{treatmentPlan.guide}}</td>
+                </tr>
+            </tbody>
+        </table>        
     </section>
 </div>
