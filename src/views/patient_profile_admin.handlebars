@@ -5,8 +5,8 @@
     <div>
         <h3>Informacion B&aacute;sica</h3>
         <div class="capture_form_row">
-            <label for="txtName">Nombre Completo</label> <!-- this information is captured also at registration time -->
-            <input type="text" name="txtName" id="txtName">
+            <md-outlined-text-field name="txtName" id="txtName"
+            label="Tu Nombre" placeholder="Patricia Cortez"></md-outlined-text-field>
         </div>
         <div class="capture_form_row">
             <label for="txtBirthdate">Fecha de nacimiento</label> <!-- this information is captured also at registration time -->
@@ -26,8 +26,8 @@
     <div>
         <h3>Informaci&oacute;n de Padecimiento</h3>
         <div class="capture_form_row">
-            <label for="txtCancerType">Tipo de C&aacute;ncer</label>
-            <input type="text" name="txtCancerType" id="txtCancerType">
+            <md-outlined-text-field id="txtCancerType" name="txtCancerType" 
+            label="Tipo de Cancer" placeholder="Sarcoma"></md-outlined-text-field>
         </div>
         <div class="capture_form_row">
             <label for="txtCancerSubtype">Subtipo de C&aacute;ncer (Opcional)</label>
@@ -71,14 +71,14 @@
             <input type="number" name="txtDuration" id="txtDuration">
         </div>
         <div class="capture_form_row">
-            <label for="txtDoctorName">M&eacute;dico Tratante (Opcional)</label>
-            <input type="text" name="txtDoctorName" id="txtDoctorName">
+            <md-outlined-text-field name="txtDoctorName" id="txtDoctorName" 
+            label="Nombre del Médico Tratante" placeholder="Dr. Manuel Rodriguez"></md-outlined-text-field>
         </div>
         <div class="capture_form_row">
-            <label for="txtDoctorEmail">Email del M&eacute;dico Tratante (Opcional)</label>
-            <input type="text" name="txtDoctorEmail" id="txtDoctorEmail">
+            <md-outlined-text-field name="txtDoctorEmail" id="txtDoctorEmail" 
+            label="Email del Médico Tratante" placeholder="mannyrod@coolmd.com"></md-outlined-text-field>
         </div>        
     </div>
-    <button hx-post="/patient_profile">Guardar</button>
+    <md-filled-button hx-post="/patient_profile">Guardar</md-filled-button>
 </form>
-    <button hx-swap="outerHTML" hx-target="body" hx-get="/home">Cancelar</button>
+    <md-text-button hx-swap="outerHTML" hx-target="body" hx-get="/home">Cancelar</md-text-button>

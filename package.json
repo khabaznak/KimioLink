@@ -8,11 +8,15 @@
     "start": "node app.js",
     "dev": "concurrently \"nodemon app.js\" \"sass --watch src/assets/styles:public/css\"",
     "sass": "sass --watch src/assets/styles:public/css",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postinstall": "cp node_modules/htmx.org/dist/htmx.min.js public/js/htmx.min.js",
+    "rollup": "npx rollup -p @rollup/plugin-node-resolve ./src/assets/styles/material.js -o ./public/css/bundled-material.js"
   },
   "author": "NS",
   "license": "ISC",
   "dependencies": {
+    "@material/web": "^1.3.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@supabase/supabase-js": "^2.39.6",
     "cors": "^2.8.5",
     "express": "^4.18.2",
@@ -21,6 +25,7 @@
     "htmx.org": "^1.9.10",
     "morgan": "^1.10.0",
     "pg": "^8.11.3",
+    "rollup": "^4.13.0",
     "sass": "^1.70.0"
   },
   "devDependencies": {
