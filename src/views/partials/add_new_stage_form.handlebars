@@ -2,20 +2,20 @@
 
 <form action="/save-treatment-medication" method="post">
     <div class="capture_form_row">
-        <label for="txtMedicationName">Nombre comercial del Medicamento:</label>
-        <input type="text" id="txtMedicationName" name="medicationName" placeholder="Tamoxifen">
+        <md-outlined-text-field name="txtMedicationName" id="txtMedicationName"
+            label="Nombre comercial del medicamento" placeholder="Tamoxifen"></md-outlined-text-field>
     </div>
     <div class="capture_form_row">
-        <label for="txtActiveSubstance">Sustancia Activa:</label>
-        <input type="text" id="txtActiveSubstance" name="activeSubstance" placeholder="Oxaliplatin">
+        <md-outlined-text-field name="txtActiveSubstance" id="txtActiveSubstance"
+            label="Sustancia activa" placeholder="Oxaliplatin"></md-outlined-text-field>
     </div>
     <div class="capture_form_row">
-        <label for="txtAlternative">Alternativas comerciales (opcional):</label>
-        <input type="text" id="txtAlternative" name="alternative" placeholder="Excemestane">
+        <md-outlined-text-field name="txtAlternative" id="txtAlternative"
+            label="Alternativas comerciales" placeholder="Excemestane"></md-outlined-text-field>
     </div>
     <div class="capture_form_row">
-        <label for="txtDosage">Dosis:</label>
-        <input type="text" id="txtDosage" name="dosage" placeholder="85">
+        <md-outlined-text-field name="txDosage" id="txtDosage"
+            label="Dósis" placeholder="85"></md-outlined-text-field>        
         <label for="dpdnDosageUnit">Unidad</label>
         <select name="dosageUnit" id="dpdnDosageUnit">
             <option value="mg" selected="true">mg</option>
@@ -23,16 +23,16 @@
         </select>
     </div>
     <div class="capture_form_row">
-       <label for="txtGuide">Guia de Administraci&oacute;n</label>
-       <textarea name="guide" id="txtGuide" cols="50" rows="3" placeholder="i.v. en 500ml de D5W durante 2hrs."></textarea>
+       <md-outlined-text-field name="txtGuide" id="txtGuide"
+            label="Guia de administración" placeholder="i.v. en 500ml de D5W durante 2hrs."></md-outlined-text-field>
     </div>
     <div class="capture_form_row">
-        <label for="txtRestPeriod">Período de Descanso (días)(Opcional):</label>
-        <input type="number" id="txtRestPeriod" name="restPeriod" placeholder="7">
+        <md-outlined-text-field name="txtRestPeriod" id="txtRestPeriod"
+            label="Periodo de descanso (días)" placeholder="7"></md-outlined-text-field>
     </div>
     <div class="capture_form_row">
-        <label for="txtDuration">Duraci&oacute;n del Tratamiento:</label>
-        <input type="text" id="txtDuration" name="duration" placeholder="6">
+        <md-outlined-text-field name="txtDuration" id="txtDuration"
+            label="Duración del tratamiento" placeholder="6"></md-outlined-text-field>
         <select name="DurationUnit" id="dpdnDurationUnit">
             <option value="dias">D&iacute;as</option>
             <option value="semanas" selected="true">Semanas</option>
@@ -41,14 +41,13 @@
         </select>
     </div>
     <div class="capture_form_row">
-        <label for="txtDoctorName">Nombre del Médico Tratante:</label>
-        <input type="text" id="txtDoctorName" name="doctorName" placeholder="Dr. Juan Perez">
+        <md-outlined-text-field name="txtDoctorName" id="txtDoctorName"
+            label="Nombre del médico tratante" placeholder="Dr. Juan Pérez"></md-outlined-text-field>
     </div> 
     <div class="capture_form_row">
-        <label for="txtDoctorEmail">Correo Electrónico del Médico Tratante:</label>
-        <input type="text" id="txtDoctorEmail" name="doctorEmail" placeholder="medico@kimiolink.org">
+        <md-outlined-text-field name="txtDoctorEmail" id="txtDoctorEmail"
+            label="Email del médico tratante" placeholder="medico@kimiolink.org"></md-outlined-text-field>
     </div>
-    <input type="submit" value="Guardar Medicamento">
     <md-filled-button hx-get="/show_add_stage_form" hx-swap="outerHTML">Guardad Medicamento</md-filled-button>
 </form>
 
