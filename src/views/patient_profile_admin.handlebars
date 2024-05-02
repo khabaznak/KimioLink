@@ -2,8 +2,8 @@
     <div>
         <a href="/home">Home</a>
     </div>
-    <div>
         <h3>Informacion B&aacute;sica</h3>
+    <div class="capture_form">
         <div class="capture_form_row">
             <md-outlined-text-field name="txtName" id="txtName"
             label="Tu Nombre" placeholder="Patricia Cortez"></md-outlined-text-field>
@@ -23,19 +23,19 @@
             <textarea name="txtAddress" id="txtAddress" cols="90" rows="4"></textarea>
         </div>
     </div>
-    <div>
+    <div class="capture_form">
         <h3>Informaci&oacute;n de Padecimiento</h3>
         <div class="capture_form_row">
             <md-outlined-text-field id="txtCancerType" name="txtCancerType" 
             label="Tipo de Cancer" placeholder="Sarcoma"></md-outlined-text-field>
         </div>
         <div class="capture_form_row">
-            <label for="txtCancerSubtype">Subtipo de C&aacute;ncer (Opcional)</label>
-            <input type="text" name="txtCancerSubtype" id="txtCancerSubtype">
+            <md-outlined-text-field id="txtCancerSubtype" name="txtCancerSubtype" 
+            label="Subtipo de Cancer (opcional)" placeholder="Sarcoma"></md-outlined-text-field>
         </div>
         <div class="capture_form_row">
-            <label for="txtCancerStage">Estadio del C&aacute;ncer</label>
-            <input type="text" name="txtCancerStage" id="txtCancerStage">
+            <md-outlined-text-field id="txtCancerStage" name="txtCancerStage" 
+            label="Etapa del cancer" placeholder="1"></md-outlined-text-field>
         </div>
         <div class="capture_form_row">
             <label for="txtDiagnoseDate">Fecha del Diagn&oacute;stico</label>
@@ -46,16 +46,16 @@
             <textarea name="txtPriorTreatments" id="txtPriorTreatments" cols="90" rows="4"></textarea>
         </div>
     </div>
-    <div>
+    <div class="capture_form">
         <h3>Tratamiento Actual</h3>
-        Nombre del Medicamento(s): Los medicamentos espec&iacute;ficos que el paciente est&aacute; buscando.
+        <p>Nombre del Medicamento(s): Los medicamentos espec&iacute;ficos que el paciente est&aacute; buscando.</p>
         <div class="capture_form_row">
-            <label for="txtDrugName">Nombre del Medicamento</label>
-            <input type="text" name="txtDrugName" id="txtDrugName">
+            <md-outlined-text-field id="txtDrugName" name="txtDrugName" 
+            label="Nombre del medicamento" placeholder="Aspirina"></md-outlined-text-field>
         </div>
         <div class="capture_form_row">
-            <label for="txtDose">Dosificaci&oacute;n</label>
-            <textarea name="txtDose" id="txtDose" cols="50" rows="5"></textarea>
+            <md-outlined-text-field id="txtDose" name="txtDose" 
+            label="Dosis" placeholder="5mg "></md-outlined-text-field>            
         </div>
         <div class="capture_form_row">
             <label for="dropIntakeFrequency">Frecuencia de administraci&oacute;n</label>
