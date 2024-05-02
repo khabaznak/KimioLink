@@ -16,6 +16,7 @@ const app = express();
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'src/views'));
+app.set('partials', path.join(__dirname, 'src/views/partials'));
 
 // Set up middleware
 app.use(logger('dev'));
