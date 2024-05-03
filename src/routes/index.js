@@ -25,12 +25,28 @@ router.post('/registerNewUser', (req,res) =>{
 
 router.get('/home',(req,res) =>{
   console.log('Home');
-  res.render('homepage',{layout:'home',title:'KimioLink Patient Home', patientId:'12345'});
+  let menu = [
+    {title: 'Home', url: '/home'},
+    {title: 'Logout', url: '/Logout'},
+    {title: 'Search meds', url: '/search'},
+    {title: 'Treatment Plan', url: '/oncological_plan'},
+    {title: 'Your patient profile', url: '/patient_profile'},
+    {title: 'Your sponsors', url: '/sponsors'}
+  ];
+  res.render('homepage',{layout:'home',title:'KimioLink Patient Home', sidebar: menu, patientId:'12345'});
 });
 
 router.get('/patient_profile', (req, res) => {
+  let menu = [
+    {title: 'Back to Home', url: '/home'},
+    {title: 'Logout', url: '/Logout'},
+    {title: 'Search meds', url: '/search'},
+    {title: 'Treatment Plan', url: '/oncological_plan'},
+    {title: 'Your patient profile', url: '/patient_profile'},
+    {title: 'Your sponsors', url: '/sponsors'}
+  ];
   res.render('patient_profile_admin', 
-    {layout:'home', title:'KimioLink Patient Profile', patientId:'12345'});
+    {layout:'home', title:'KimioLink Patient Profile', sidebar:menu, patientId:'12345'});
 });
 
 router.post('/patient_profile', (req, res) => {
@@ -47,8 +63,16 @@ router.get('/show_add_stage_form', (req, res) => {
 
 router.get('/oncological_plan', (req, res) => {
   console.log('Oncological planner');
+  let menu = [
+    {title: 'Back to Home', url: '/home'},
+    {title: 'Logout', url: '/Logout'},
+    {title: 'Search meds', url: '/search'},
+    {title: 'Treatment Plan', url: '/oncological_plan'},
+    {title: 'Your patient profile', url: '/patient_profile'},
+    {title: 'Your sponsors', url: '/sponsors'}
+  ];
   res.render('oncological_plan',
-    {layout:'home', title:'KimioLink Oncological Plan', patient_id:'12345'});
+    {layout:'home', title:'KimioLink Oncological Plan', sidebar:menu, patient_id:'12345'});
 });
 
 
@@ -68,7 +92,16 @@ router.post('/save-treatment-medication', (req, res) => {
   };
 
   console.log('Saving treatment medication');
-  res.render('oncological_plan',{layout:'home', title:'KimioLink Oncological Plan', patientId:'12345', treatmentPlan: medicationPlan});
+
+  let menu = [
+    {title: 'Home', url: '/'},
+    {title: 'Logout', url: '/Logout'},
+    {title: 'Search meds', url: '/search'},
+    {title: 'Treatment Plan', url: '/oncological_plan'},
+    {title: 'Your patient profile', url: '/patient_profile'},
+    {title: 'Your sponsors', url: '/sponsors'}
+  ];
+  res.render('oncological_plan',{layout:'home', title:'KimioLink Oncological Plan', sidebar: menu, patientId:'12345', treatmentPlan: medicationPlan});
 });
 
 
