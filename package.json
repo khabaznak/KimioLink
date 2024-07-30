@@ -6,11 +6,9 @@
   "type": "commonjs",
   "scripts": {
     "start": "node app.js",
-    "dev": "concurrently \"nodemon app.js\" \"sass --watch src/assets/styles:public/css\"",
-    "sass": "sass --watch src/assets/styles:public/css",
-    "lint": "eslint .",
-    "postinstall": "cp node_modules/htmx.org/dist/htmx.min.js public/js/htmx.min.js",
-    "rollup": "npx rollup -p @rollup/plugin-node-resolve ./src/assets/styles/material.js -o ./public/css/bundled-material.js"
+    "dev": "concurrently \"nodemon app.js\"",
+    "build:css": "tailwindcss -i ./src/assets/styles/tailwind.css -o ./public/css/tailwind.css",
+    "lint": "eslint ."
   },
   "author": "NS",
   "license": "ISC",
@@ -34,6 +32,7 @@
     "eslint": "^8.56.0",
     "eslint-plugin-node": "^11.1.0",
     "mocha": "^10.2.0",
-    "nodemon": "^3.0.3"
+    "nodemon": "^3.0.3",
+    "tailwindcss": "^3.4.4"
   }
 }

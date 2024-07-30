@@ -1,4 +1,97 @@
-<div class="main">
-    <h1>Patient's Home</h1>
-    <h2>Welcome patient id:{{patientId}}</h2>
-</div>
+<section class="mb-8">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-4">Patient's Home</h1>
+                    <h2 class="text-xl text-gray-700">Welcome, patient id: {{patientId}}</h2>
+                </section>
+                
+                <section class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Upcoming Appointments</h3>
+                    <ul>
+                        {{#each appointments}}
+                            <li class="mb-4 p-4 bg-gray-100 rounded shadow">
+                                <strong>Date:</strong> {{date}}<br>
+                                <strong>Time:</strong> {{time}}<br>
+                                <strong>Doctor:</strong> {{doctor}}<br>
+                                <button class="mt-2 bg-teal text-white px-4 py-2 rounded">Reschedule</button>
+                                <button class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Cancel</button>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Recent Medical Records</h3>
+                    <ul>
+                        {{#each records}}
+                            <li class="mb-4 p-4 bg-gray-100 rounded shadow">
+                                <strong>Date:</strong> {{date}}<br>
+                                <strong>Report:</strong> <a href="{{url}}" class="text-teal-600 hover:underline">View Report</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Medication Schedule</h3>
+                    <ul>
+                        {{#each medications}}
+                            <li class="mb-4 p-4 bg-gray-100 rounded shadow">
+                                <strong>Medication:</strong> {{name}}<br>
+                                <strong>Dosage:</strong> {{dosage}}<br>
+                                <strong>Frequency:</strong> {{frequency}}
+                            </li>
+                        {{/each}}
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Health Metrics</h3>
+                    <ul>
+                        {{#each metrics}}
+                            <li class="mb-4 p-4 bg-gray-100 rounded shadow">
+                                <strong>{{metric}}:</strong> {{value}} ({{date}})
+                            </li>
+                        {{/each}}
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Messages</h3>
+                    <ul>
+                        {{#each messages}}
+                            <li class="mb-4 p-4 bg-gray-100 rounded shadow">
+                                <strong>From:</strong> {{from}}<br>
+                                <strong>Message:</strong> {{message}}<br>
+                                <a href="{{replyUrl}}" class="mt-2 bg-teal text-white px-4 py-2 rounded">Reply</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Resources and Education</h3>
+                    <ul>
+                        {{#each resources}}
+                            <li class="mb-4 p-4 bg-gray-100 rounded shadow">
+                                <strong>{{title}}</strong><br>
+                                <a href="{{url}}" class="text-teal-600 hover:underline">Read More</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Support Community</h3>
+                    <ul>
+                        {{#each supportGroups}}
+                            <li class="mb-4 p-4 bg-gray-100 rounded shadow">
+                                <strong>{{name}}</strong><br>
+                                <a href="{{url}}" class="text-teal-600 hover:underline">Join Group</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Personal Notes</h3>
+                    <textarea class="w-full p-4 bg-gray-100 rounded shadow" rows="5" placeholder="Add your notes here..."></textarea>
+                </section>

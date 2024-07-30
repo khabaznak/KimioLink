@@ -1,6 +1,17 @@
-<side>
-    <img src="" alt="profile picture" sizes="">
-    {{#each sidebar }}    
-        <a href="{{url}}">{{title}}</a>
-    {{/each }}
-</side>
+<aside class="w-64 bg-teal-light shadow-lg h-full p-4">
+    <div class="flex items-center space-x-4 mb-6">
+       <img class="w-16 h-16 rounded-full border-2 border-gray-300" 
+       src="/images/profile.jpg" 
+       alt="profile picture"
+       sizes="">
+       <div>
+            <h2 class="text-lg font-semibold text-gray-900">Camila Sodi</h2>
+            <p class="text-sm text-gray-600">Lorem ipsum donnor lorem ipsun donnor deimos</p>
+        </div>
+    </div>
+    <nav class="space-y-2">
+        {{#each sidebar}}
+            <a href="{{url}}" class="block py-2 px-4 rounded hover:bg-teal-light text-gray-dark">{{title}}</a>
+        {{/each}}
+    </nav>
+</aside>

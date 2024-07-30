@@ -1,15 +1,17 @@
-<div class="main">
-    <h1>Oncological Plan</h1>
-    <p>Define your plan by adding all stages you need. <br/>
+<div class="p-4 bg-white text-gray-dark">
+    <h1 class="text-3xl text-blue-dark">Oncological Plan</h1>
+    <p class="text-gray">Define your plan by adding all stages you need. <br/>
     Each stage you can also define your drug, doze, frequency and even resting period.</p>
    
-    <div class="controller_panel">
+    <div class="controller_panel mt-4">
     <br/>
-        <md-filled-button hx-get="/show_add_stage_form" hx-swap="outerHTML">Add New Plan Stage</md-filled-button>
+        <button hx-get="/show_add_stage_form" hx-swap="outerHTML" class="mt-2 bg-teal text-white px-4 py-2 rounded">
+      Add a new stage to the plan
+    </button>
     </div>
     <section>
         <table>
-            <caption>Your Treatment Plan</caption>
+            <caption class="text-2xl mt-6 text-blue-dark">Your Treatment Plan</caption>
             <thead>
                 <th>Step</th>
                 <th>Medication</th>
