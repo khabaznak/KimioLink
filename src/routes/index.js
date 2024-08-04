@@ -69,7 +69,7 @@ router.post('/add-stage', (req, res) => {
   console.log(`New stage added: ${stageName}, ${drug}, ${dose}, ${frequency}, ${restingPeriod}`);
   
   // Respond with a success message or updated content
-  res.send(`<p>Stage "${stageName}" successfully added!</p>`);
+  res.render('partials/toast_card',{layout:false, toastMessage:`Successfully added "${stageName}"`, class:'fixed bottom-4 right-4 bg-teal-600 text-white px-4 py-2 rounded shadow-lg'});
 });
 
 router.get('/oncological_plan', (req, res) => {
