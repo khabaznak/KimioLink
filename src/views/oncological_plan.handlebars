@@ -1,16 +1,18 @@
 <div class="p-4 bg-white text-gray-dark">
     <h1 class="text-3xl text-blue-dark">Oncological Plan</h1>
     <p class="text-gray">Define your plan by adding all stages you need. <br/>
-    Each stage you can also define your drug, doze, frequency and even resting period.</p>
+    Each stage you can also define your drug, doze, frequency and even resting period.
+    <a href="https://www.cancer.org/es/cancer/como-sobrellevar-el-cancer/tomar-decisiones-sobre-el-tratamiento/planifica-programa-tratamiento.html" class=" text-blue-dark">Aqui</a>
+    hay mas información sobre como se planifica un tratamiendo contra el cancer.
+    </p>
    
     <div class="controller_panel mt-4">
-    <br/>
-        <button hx-get="/show_add_stage_form" hx-swap="outerHTML" class="mt-2 bg-teal text-white px-4 py-2 rounded">
-      Add a new stage to the plan
-    </button>
+        <!--button hx-get="/show_add_stage_form" hx-swap="outerHTML" class="mt-2 bg-teal text-white px-4 py-2 rounded">Add a new stage to the plan</button-->
+        <button id="btnAddPlanStage" class="mt-2 bg-teal text-white px-4 py-2 rounded">Add a new stage to the plan</button>
+        {{> dialogbox}}
     </div>
     <section>
-        <table>
+        <table id="tblTreatment">
             <caption class="text-2xl mt-6 text-blue-dark">Your Treatment Plan</caption>
             <thead>
                 <th>Step</th>
