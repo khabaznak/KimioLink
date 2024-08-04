@@ -60,6 +60,17 @@ router.get('/show_add_stage_form', (req, res) => {
   res.render('partials/add_new_stage_form',
     {layout:false, title:'KimioLink Oncological Plan', patient_id:'123345'});
 });
+// Route to handle form submission
+router.post('/add-stage', (req, res) => {
+  const { stageName, drug, dose, frequency, restingPeriod } = req.body;
+  
+  // Here, you would typically save the data to your database
+  // For simplicity, let's log it and respond with a success message
+  console.log(`New stage added: ${stageName}, ${drug}, ${dose}, ${frequency}, ${restingPeriod}`);
+  
+  // Respond with a success message or updated content
+  res.send(`<p>Stage "${stageName}" successfully added!</p>`);
+});
 
 router.get('/oncological_plan', (req, res) => {
   console.log('Oncological planner');

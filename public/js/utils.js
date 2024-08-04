@@ -11,10 +11,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (cancelDialogButton) {
         cancelDialogButton.addEventListener('click', closeDialog);
     }
-    const confirmDialogButton = document.getElementById('btnDialogConfirm');
-    if (confirmDialogButton) {
-        confirmDialogButton.addEventListener('click', closeDialog);
-    }
+
+    document.getElementById('dialog-confirm').addEventListener('htmx:afterRequest', closeDialog);
 });
 
 function showDialog() {

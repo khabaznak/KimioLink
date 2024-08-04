@@ -1,12 +1,11 @@
-<dialog id="dialog-confirm" class="p-6 rounded-md shadow-lg bg-white w-1/3 backdrop:bg-black backdrop:bg-opacity-50 backdrop:backdrop-blur">
-    <form method="dialog" class="flex flex-col space-y-4">
+<dialog id="dialog-confirm" class="p-6 rounded-md shadow-lg bg-white w-1/3 backdrop:bg-black backdrop:bg-opacity-50 backdrop:backdrop-blur-sm">
+    <form method="post" action="/add-stage" hx-post="/add-stage" hx-target="#msgHandler" hx-swap="innerHTML" class="flex flex-col space-y-4">
         <h2 class="text-xl font-semibold">Add a New Stage</h2>
-        <!-- Add your form fields here -->
-        <input type="text" name="stageName" placeholder="Stage Name" class="p-2 border rounded">
-        <input type="text" name="drug" placeholder="Drug" class="p-2 border rounded">
-        <input type="number" name="dose" placeholder="Dose" class="p-2 border rounded">
-        <input type="text" name="frequency" placeholder="Frequency" class="p-2 border rounded">
-        <input type="text" name="restingPeriod" placeholder="Resting Period" class="p-2 border rounded">
+        <input type="text" name="stageName" placeholder="Stage Name" class="p-2 border rounded" required>
+        <input type="text" name="drug" placeholder="Drug" class="p-2 border rounded" required>
+        <input type="number" name="dose" placeholder="Dose" class="p-2 border rounded" required>
+        <input type="text" name="frequency" placeholder="Frequency" class="p-2 border rounded" required>
+        <input type="text" name="restingPeriod" placeholder="Resting Period" class="p-2 border rounded" required>
         
         <div class="flex justify-end space-x-2">
             <button type="submit" class="bg-teal text-white px-4 py-2 rounded">Confirm</button>
