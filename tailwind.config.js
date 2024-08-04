@@ -8,9 +8,9 @@ module.exports = {
     extend: {
       colors: {
         teal: {
-          light: '#89CFF0', // light blue
-          DEFAULT: '#5F9EA0', // medium blue/teal
-          dark: '#333333', // dark gray (used for text)
+          light: '#cfe1e2', // light Teal
+          DEFAULT: '#5F9EA0', // medium Teal
+          dark: '#395e60', // dark Teal (used for text)
         },
         blue: {
           light: '#98FB98', // pastel green (similar to light blue)
