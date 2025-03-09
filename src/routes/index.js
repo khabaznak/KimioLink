@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const supabase = require('../db/supabaseClient'); 
 
 // GET home page
 router.get('/', (req, res) => {
@@ -61,15 +62,26 @@ router.get('/show_add_stage_form', (req, res) => {
     {layout:false, title:'KimioLink Oncological Plan', patient_id:'123345'});
 });
 // Route to handle form submission
-router.post('/add-stage', (req, res) => {
+router.post('/add-stage', async (req, res) => {
   const { stageName, drug, dose, frequency, restingPeriod } = req.body;
   
-  // Here, you would typically save the data to your database
-  // For simplicity, let's log it and respond with a success message
+  // Save data to Supabase
+  const { data, error } = await supabase
+  .from('stages')
+  .insert(
+      { name:stageName, drug:drug, dose:dose, frequency:frequency, resting_period:restingPeriod }
+  )
+  .select();
+
+if (error) {
+  console.error('Error inserting data:', error);
+  res.render('partials/toast_card',{layout:false, toastMessage:`Failed to add "${stageName}"`, class:'fixed bottom-4 right-4 bg-coral text-white px-4 py-2 rounded shadow-lg'});
+} else {
   console.log(`New stage added: ${stageName}, ${drug}, ${dose}, ${frequency}, ${restingPeriod}`);
   
   // Respond with a success message or updated content
   res.render('partials/toast_card',{layout:false, toastMessage:`Successfully added "${stageName}"`, class:'fixed bottom-4 right-4 bg-teal-600 text-white px-4 py-2 rounded shadow-lg'});
+}
 });
 
 router.get('/oncological_plan', (req, res) => {

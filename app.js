@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const { engine } = require('express-handlebars');
 const path = require('path');
@@ -5,7 +6,7 @@ const logger = require('morgan');
 const handlebars = require('express-handlebars');
 const cors = require('cors');
 const helmet = require('helmet');
-
+const PORT = process.env.PORT || 3000;
 // Import routes
 const indexRouter = require('./src/routes/index');
 
@@ -51,7 +52,6 @@ app.use((err, req, res, next) => {
   res.render('error',{title:'Error Detected in KimioLink'});
 });
 
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
